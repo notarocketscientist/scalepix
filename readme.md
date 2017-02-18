@@ -1,12 +1,12 @@
 # Scalepix
 
-** This is still work in progress!**
+**This is still work in progress!**
 
 ## What is it?
 
 A shell script to scale all JPG-images in a folder. Also it renames them with a consistent naming convention.
 
-## Why is that usefull?
+## Why is that useful?
 
 Do you own multiple cameras? Then you often have something like this:
 
