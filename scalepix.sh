@@ -2,7 +2,24 @@
 
 clear;
 
-# default scaling factor (percent)
+# check dependencies
+echo "Checking dependencies:"
+
+if hash exiv2 2>/dev/null; then
+    echo "exiv2: found!"
+else
+    echo "\"exiv2\" must be installed. Aborting."
+    exit 1;
+fi
+
+if hash convert 2>/dev/null; then
+    echo "convert: found!"
+else
+    echo "\"convert\" must be installed. Aborting."
+    exit 1;
+fi
+
+# set default scaling factor (percent)
 percent=50
 
 # check if args
