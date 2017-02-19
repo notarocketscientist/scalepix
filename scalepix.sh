@@ -77,13 +77,13 @@ for picture in $pictures; do
 
 done
 
-# now, find all renamed pics again
-pics=`find . -maxdepth 1 -iname '*.jpg'`
+# now, find all renamed pictures again
+renamed_pictures=`find . -maxdepth 1 -iname '*.jpg'`
 
 # resize operation
-for pic in $pics; do
+for renamed_picture in $renamed_pictures; do
 
-    convert $pic -resize $percent% $(basename $pic .jpg).jpg;
-    echo "Finished scaling ($percent%) of $pic"
+    convert $renamed_picture -resize $percent% $(basename $renamed_picture .jpg).jpg;
+    echo "Finished scaling ($percent%) of $renamed_picture"
 
 done
