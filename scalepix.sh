@@ -32,3 +32,24 @@ case "$answer" in
         exit 1
         ;;
 esac
+
+# get a list of all jpeg files files in the current directory
+# (-iname = case insensitive: finds ".jpg" or ".JPG")
+pictures=`find . -maxdepth 1 -iname '*.jpg'`
+
+# force lower case file extension
+for picture in $pictures; do
+
+    # current file
+    current_file=$picture
+
+    # full filename (with extension)
+    full_filename=${current_file##*/}
+
+    # filename without extension
+    filename=${full_filename%.*}
+
+    # save with lowercase jpg extension
+    mv -f $picture $filename.jpg
+
+done

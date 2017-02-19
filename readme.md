@@ -34,6 +34,7 @@ So in the end `IMG_1467.JPG` and `DSC_093.jpg` become:
 
 ## Dependencies
 
+* find
 * exiv2
 * convert
 
