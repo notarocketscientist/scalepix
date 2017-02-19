@@ -66,7 +66,13 @@ for picture in $pictures; do
     # filename without extension
     filename=${full_filename%.*}
 
+    # new filename
+    new_filename=$filename.jpg
+
     # save with lowercase jpg extension
-    mv -f $picture $filename.jpg
+    mv -f $picture $new_filename
+
+    # rename with yyyymmdd_hhmmss_basename pattern
+    exiv2 -r'%Y%m%d_%H%M%S_:basename:' rename $new_filename
 
 done
