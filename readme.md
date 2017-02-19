@@ -37,6 +37,20 @@ So in the end `IMG_1467.JPG` and `DSC_093.jpg` become:
 * exiv2
 * convert
 
+### Install dependencies on Mac (Homebrew)
+
+```
+brew install exiv2
+brew install imagemagick
+```
+
+### Install dependencies on Debian/Ubuntu
+
+```
+sudo apt-get install exiv2
+sudo apt-get install imagemagick
+```
+
 ## Usage
 
 **CAUTION**: Make a backup of your original image files/folder before running this script!
