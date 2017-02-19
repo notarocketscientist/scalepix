@@ -1,7 +1,5 @@
 # Scalepix
 
-**This is still work in progress!**
-
 ## What is it?
 
 A shell script to scale all JPG-images in a folder. Also, it renames them using a consistent naming convention.
