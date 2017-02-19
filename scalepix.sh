@@ -54,7 +54,7 @@ esac
 # (-iname = case insensitive: finds ".jpg" or ".JPG")
 pictures=`find . -maxdepth 1 -iname '*.jpg'`
 
-# force lower case file extension
+# force lower case file extension and rename with exiv2-data
 for picture in $pictures; do
 
     # current file
@@ -74,5 +74,16 @@ for picture in $pictures; do
 
     # rename with yyyymmdd_hhmmss_basename pattern
     exiv2 -r'%Y%m%d_%H%M%S_:basename:' rename $new_filename
+
+done
+
+# now, find all renamed pics again
+pics=`find . -maxdepth 1 -iname '*.jpg'`
+
+# resize operation
+for pic in $pics; do
+
+    convert $pic -resize $percent% $(basename $pic .jpg).jpg;
+    echo "Finished scaling ($percent%) of $pic"
 
 done
