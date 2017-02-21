@@ -14,7 +14,7 @@ Do you own multiple cameras? Then you often have something like this:
 If you make a best-of selection with images from both camera models, your images get all mixed up in your folder (depends on your current folder sorting of your OS).
 So, you might want to have a consistent naming convention for all your images in that folder.
 
-* This script reads the Exif-data of all your images in a folder and prepends date and time to the filename.
+* This script reads the Exif-data of all your images in a folder and prepends date and time to the filename (the original filename is part of the new name).
 * Also, it scales the image to a desired percentage. (When I want to upload my best of image collection to an online image gallery, having huge JPG-files results in lots of GB.)
 
 So in the end `IMG_1467.JPG` and `DSC_093.jpg` become:

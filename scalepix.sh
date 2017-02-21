@@ -6,14 +6,14 @@ clear;
 echo "Checking dependencies:"
 
 if hash exiv2 2>/dev/null; then
-    echo "exiv2: found!"
+    echo "* exiv2   : found!"
 else
     echo "\"exiv2\" must be installed. Aborting."
     exit 1;
 fi
 
 if hash convert 2>/dev/null; then
-    echo "convert: found!"
+    echo "* convert : found!"
 else
     echo "\"convert\" must be installed. Aborting."
     exit 1;
@@ -21,6 +21,7 @@ fi
 
 # set default scaling factor (percent)
 percent=50
+pwd=`pwd`
 
 # check if args
 if [ $# -ne 0 ]
@@ -35,9 +36,16 @@ if [ $# -ne 0 ]
 fi
 
 # ask to continue
-read -p "Converting images in folder:
-Scaling: $percent%
-Proceed? [y][N]: " answer
+read -p "
+Summary:
+Folder    : $pwd
+Scaling   : $percent%
+
+***CAUTION***
+This operation alters your image files!
+Make sure to create a backup if needed!
+
+Proceed?  [y][N]: " answer
 
 case "$answer" in
     Yes|yes|Y|y) echo "Processing..."
@@ -87,3 +95,5 @@ for renamed_picture in $renamed_pictures; do
     echo "Finished scaling ($percent%) of $renamed_picture"
 
 done
+
+echo "Done."
