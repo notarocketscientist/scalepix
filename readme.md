@@ -24,7 +24,7 @@ So in the end `IMG_1467.JPG` and `DSC_093.jpg` become:
 20161104_151309_DSC_093.jpg  # shot on: yeah, I guess you got it
 ```
 
-## Fist setup
+## First setup
 
 * clone repo or download .sh-file
 * make it executable: `chmod +x scalepix.sh`
@@ -54,8 +54,8 @@ sudo apt-get install imagemagick
 **CAUTION**: Make a backup of your original image files/folder before running this script!
 
 ```
-# mv script to a folder with JPG files, then execute
-./scalepix.sh # default scaling: 50%
+# mv script to a folder with JPG files, then execute (default scaling: 50%)
+./scalepix.sh
 
 # call with own scaling percentage, e.g. 75%
 ./scalepix.sh 75
